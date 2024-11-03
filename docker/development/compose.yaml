@@ -1,0 +1,13 @@
+services:
+  algofrontend:
+    container_name: frontend
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    image: algofrontend
+    ports:
+      - "3001:3000"
+    environment:
+      - NODE_ENV=development
+    volumes:
+      - ../../.:/app
