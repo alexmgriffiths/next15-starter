@@ -71,3 +71,10 @@ Contributions are welcome! Please open an issue or submit a pull request.
 - [PostgreSQL](https://www.postgresql.org/)
 - [ShadCN](https://shadcn.com/)
 - [Tailwind CSS](https://tailwindcss.com/)
+
+## Screenshots
+![Screenshot 2024-11-04 at 2 50 24 AM](https://github.com/user-attachments/assets/d0422601-a9c2-4ee8-ba63-04863474aa3c)
+![Screenshot 2024-11-04 at 2 50 31 AM](https://github.com/user-attachments/assets/76dfbb48-1c28-49d5-b42f-6051bdf7d8d5)
+![Screenshot 2024-11-04 at 2 50 47 AM](https://github.com/user-attachments/assets/fddb2138-eee8-4f31-b51c-c1deb5547e3f)
+
+
