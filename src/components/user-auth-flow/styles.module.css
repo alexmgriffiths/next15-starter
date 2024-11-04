@@ -1,0 +1,147 @@
+.growIn {
+    animation: growIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    /* Changed to cubic-bezier for smoother transition */
+}
+
+@keyframes growIn {
+    0% {
+        height: 0;
+        padding: 10px;
+        opacity: 0;
+        transform: translateX(10rem);
+        margin: 0;
+    }
+
+    100% {
+        height: 46px;
+        padding: 10px;
+        opacity: 1;
+        transform: translateX(0);
+        margin-bottom: 8px;
+    }
+}
+
+.invisible {
+    max-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    opacity: 0;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    margin-bottom: 8px;
+    transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+    border-color: #66afe9;
+    outline: none;
+}
+
+.input[disabled="true"] {
+    background-color: #EFEFEF;
+}
+
+.hiddenButton {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+}
+
+.errorContainer {
+    display: flex;
+    gap: 4px;
+    font-size: 14px;
+    align-items: center;
+    justify-content: center;
+    color: #F55255;
+    transition: all 0.3s;
+    margin: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s linear;
+}
+
+.errorContentFull {
+    margin-bottom: 22px;
+    height: 20px;
+    opacity: 1;
+}
+
+.shake {
+    animation: shakeSide 0.5s linear;
+}
+
+@keyframes shakeSide {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-10px);
+    }
+
+    50% {
+        transform: translateX(10px);
+    }
+
+    75% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+.loading {
+    background-color: #F8F8F8;
+}
+
+.button {
+    width: 100%;
+    background-color: black;
+    border: none;
+    max-height: 40px;
+    color: white;
+    border-radius: 4px;
+    transition: all 0.2s linear;
+}
+
+.buttonShow {
+    animation: buttonGrowIn 0.5s ease-in-out forwards;
+}
+
+@keyframes buttonGrowIn {
+    0% {
+        height: 0;
+        padding: 0;
+        opacity: 0;
+        transform: translateX(10rem);
+        margin: 0;
+    }
+
+    10% {
+        min-height: 40px;
+        height: 40px;
+        opacity: 0;
+        margin-bottom: 8px;
+    }
+
+    100% {
+        opacity: 1;
+        min-height: 40px;
+        height: 40px;
+        transform: translateX(0);
+    }
+}

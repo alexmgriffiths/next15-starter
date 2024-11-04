@@ -1,0 +1,19 @@
+{
+    "semi": true,
+    "trailingComma": "all",
+    "singleQuote": true,
+    "jsxSingleQuote": false,
+    "tabWidth": 4,
+    "useTabs": false,
+    "printWidth": 120,
+    "overrides": [
+        {
+            "files": "*.md",
+            "options": {
+                "proseWrap": "never",
+                "tabWidth": 2,
+                "useTabs": false
+            }
+        }
+    ]
+}

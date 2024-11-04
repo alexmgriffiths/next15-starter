@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TypeScript Next.js Boilerplate
+
+This project is a boilerplate for building web applications using **Next.js 15** and **React 19**. It incorporates a full-stack architecture with **PostgreSQL** for the database, **Redis** for session storage, and **Prisma** as the ORM. The UI is built using **ShadCN** with **Tailwind CSS**.
+
+## Features
+
+- **Authentication**: Boilerplate login and signup flows with authentication & authorization handling.
+- **Database**: PostgreSQL for structured data storage.
+- **Session Management**: Redis for efficient session storage.
+- **ORM**: Prisma for easy database interactions.
+- **UI Components**: ShadCN for a customizable UI with Tailwind CSS.
+- **Docker**: Docker Compose setup for easy deployment and development.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- [Docker](https://www.docker.com/) and [Docker Compose](https://docs.docker.com/compose/) installed on your machine.
+- Node.js (v16 or later) installed on your machine (for development).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Installation
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. **Clone the repository**:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   git clone https://github.com/alexmgriffiths/next15-starter.git
+   cd next15-starter
+   ```
 
-## Learn More
+2. **Configure environment variables**:
 
-To learn more about Next.js, take a look at the following resources:
+   Create a `.env` file in the root directory and set up your environment variables. Use the provided `.env.example` as a reference.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Build and run the development environment**:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Run the following command to start the services:
 
-## Deploy on Vercel
+   ```bash
+   make br-development
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **Run the application**:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   The Next.js application will be running on [http://localhost:3001](http://localhost:3001).
+
+   You can access it directly from your browser.
+
+
+## Technologies Used
+
+- **Next.js**: A React framework for server-rendered applications.
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A typed superset of JavaScript.
+- **PostgreSQL**: A powerful, open-source relational database.
+- **Redis**: An in-memory data structure store for session management.
+- **Prisma**: A modern ORM for Node.js and TypeScript.
+- **ShadCN**: A UI component library.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **Zod**: For input schema checking
+- **eslint**: For linting
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## Acknowledgments
+
+- [Next.js](https://nextjs.org/)
+- [Prisma](https://www.prisma.io/)
+- [Redis](https://redis.io/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [ShadCN](https://shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
