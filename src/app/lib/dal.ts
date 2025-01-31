@@ -15,8 +15,7 @@ export const verifySession = cache(async () => {
     if (!session?.token) redirect('/login');
 
     const userId = await getUserIdFromSession();
-    console.log(userId)
-    if (!userId) redirect('/login')
+    if (!userId) redirect('/logout')
     const userData = await prisma.user.findFirst({
         where: { id: userId }, select: {
             id: true,

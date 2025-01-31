@@ -21,7 +21,7 @@ export async function login(state: LoginFormState, formData: FormData) {
     const { email, password } = validatedFields.data;
 
     const user = await prisma.user.findFirst({ where: { email }, select: { id: true, password: true } });
-    if (!user || !user.id || !user.password || !await compare(password, user!.password!)) {
+    if (!user || !user.id || !user.password || !await compare(password, user?.password)) {
         return {
             error: 'Incorrect username or password'
         }

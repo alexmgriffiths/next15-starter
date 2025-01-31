@@ -36,6 +36,7 @@ This project is a boilerplate for building web applications using **Next.js 15**
    Run the following command to start the services:
 
    ```bash
+   yarn install
    make br-development
    ```
 
