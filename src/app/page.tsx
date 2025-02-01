@@ -1,15 +1,20 @@
-'use server'
+'use client'
 
-import { verifySession } from "./lib/dal"
+import { AuthProvider, useAuth } from "@/hooks/use-auth"
+import { redirect } from "next/navigation"
 
 export default async function Dashboard() {
-  const session = await verifySession()
 
-  return (
-    <>
-      <code>
-        {JSON.stringify(session)}
-      </code>
-    </>
-  )
+  const auth: AuthProvider = useAuth()
+  if (!auth || auth.isLoading) {
+    return (
+      <h1>You will be redirected shortly...</h1>
+    )
+  }
+
+  if (!auth.user || !auth.user.isAuth) {
+    redirect('/login')
+  } else {
+    redirect('/dashboard')
+  }
 }

@@ -1,14 +1,20 @@
-'use server'
+'use client'
 
-import { verifySession } from "../lib/dal"
+import { AuthProvider, useAuth } from "@/hooks/use-auth"
 
-export default async function Dashboard() {
-    const session = await verifySession()
+export default function Dashboard() {
+
+    const auth: AuthProvider = useAuth()
+    if (!auth || auth.isLoading) {
+        return (
+            <h1>Loading...</h1>
+        )
+    }
 
     return (
         <>
             <code>
-                {JSON.stringify(session)}
+                {JSON.stringify(auth)}
             </code>
         </>
     )

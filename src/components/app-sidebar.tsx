@@ -1,4 +1,4 @@
-import { Home, Inbox, Calendar, Search, Settings, ChevronDown, User2, ChevronUp, LifeBuoy, Send } from "lucide-react";
+import { Home, Settings, ChevronDown, User2, ChevronUp, LifeBuoy, Send, BadgeAlert, GitGraph, History, ChartBar, Target, TriangleAlert } from "lucide-react";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarGroup, SidebarGroupContent, SidebarGroupLabel, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "./ui/sidebar";
 import {
     DropdownMenu,
@@ -6,49 +6,58 @@ import {
     DropdownMenuItem,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { useAuth } from "@/hooks/use-auth";
 
 const items = [
     {
-        title: "Home",
+        title: "Dashboard",
         url: "#",
         icon: Home,
     },
     {
-        title: "Inbox",
+        title: "Deployments", // UAT, Production, BETA, etc
         url: "#",
-        icon: Inbox,
+        icon: Target,
     },
     {
-        title: "Calendar",
+        title: "Releases", // Upload and distribute new releases to a deployment, track history, mandatory vs optional, details, etc
         url: "#",
-        icon: Calendar,
+        icon: Send,
     },
     {
-        title: "Search",
+        title: "Rollback",
         url: "#",
-        icon: Search,
+        icon: History,
     },
     {
-        title: "Settings",
+        title: "Insights",
         url: "#",
-        icon: Settings,
+        icon: ChartBar,
+    },
+    {
+        title: "Compatibility",
+        url: "#",
+        icon: GitGraph,
     },
 ]
 
 const helpItems = [
     {
-        title: 'Support',
+        title: 'Audit Logs',
         url: '#',
-        icon: LifeBuoy
+        icon: TriangleAlert
     },
     {
-        title: 'Feedback',
+        title: 'Configuration',
         url: '#',
-        icon: Send
+        icon: Settings
     }
 ]
 
-export function AppSidebar() {
+export function AppSidebar({ userName }: any) {
+
+    const auth: any = useAuth()
+
     return (
         <Sidebar variant="sidebar">
             <SidebarHeader>
@@ -57,16 +66,13 @@ export function AppSidebar() {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <SidebarMenuButton>
-                                    Select Workspace
+                                    Select Application
                                     <ChevronDown className="ml-auto" />
                                 </SidebarMenuButton>
                             </DropdownMenuTrigger>
                             <DropdownMenuContent className="w-[--radix-popper-anchor-width]">
                                 <DropdownMenuItem>
-                                    <span>Acme Inc</span>
-                                </DropdownMenuItem>
-                                <DropdownMenuItem>
-                                    <span>Acme Corp.</span>
+                                    <span>Fufild Marketplace</span>
                                 </DropdownMenuItem>
                             </DropdownMenuContent>
                         </DropdownMenu>
@@ -90,7 +96,7 @@ export function AppSidebar() {
                     </SidebarGroupContent>
                 </SidebarGroup>
                 <SidebarGroup>
-                    <SidebarGroupLabel>Help</SidebarGroupLabel>
+                    <SidebarGroupLabel>Settings</SidebarGroupLabel>
                     <SidebarGroupContent>
                         {helpItems.map((item) => (
                             <SidebarMenuItem key={item.title}>
@@ -112,7 +118,7 @@ export function AppSidebar() {
                         <DropdownMenu>
                             <DropdownMenuTrigger asChild>
                                 <SidebarMenuButton>
-                                    <User2 /> Username
+                                    <User2 /> {userName}
                                     <ChevronUp className="ml-auto" />
                                 </SidebarMenuButton>
                             </DropdownMenuTrigger>

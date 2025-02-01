@@ -5,6 +5,7 @@ import "./globals.css";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/app-sidebar";
 import { usePathname } from "next/navigation";
+import { ProvideAuth } from "@/hooks/use-auth";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -35,11 +36,13 @@ export default function RootLayout({
             {children}
           </>
         ) :
-          <SidebarProvider>
-            <AppSidebar />
-            <SidebarTrigger />
-            {children}
-          </SidebarProvider>
+          <ProvideAuth>
+            <SidebarProvider>
+              <AppSidebar />
+              <SidebarTrigger />
+              {children}
+            </SidebarProvider>
+          </ProvideAuth>
         }
       </body>
     </html>
