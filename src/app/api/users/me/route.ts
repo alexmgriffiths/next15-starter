@@ -1,5 +1,5 @@
-import { getUserSession } from "@/app/lib/dal";
-import { httpError, httpSuccess } from "@/app/lib/helpers";
+import { getUserSession } from "@/lib/dal";
+import { httpError, httpSuccess } from "@/lib/helpers";
 
 export async function GET(request: any) {
     const cookieHeader = request.headers.get("cookie");

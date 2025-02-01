@@ -1,9 +1,9 @@
 'use server'
-import { SignupFormState, SignupFormSchema, LoginFormState, LoginFormSchema } from "@/app/lib/definitions"
+import { SignupFormState, SignupFormSchema, LoginFormState, LoginFormSchema } from "@/lib/definitions"
 import { PrismaClient } from "@prisma/client"
 import { hash, compare } from 'bcryptjs'
 import { redirect } from "next/navigation"
-import { createSession } from "../lib/redis"
+import { createSession } from "@/lib/redis"
 
 const prisma = new PrismaClient()
 
